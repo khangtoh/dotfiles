@@ -1,0 +1,47 @@
+// See https://github.com/jigish/slate.
+
+S.config('defaultToCurrentScreen', true);
+S.config('nudgePercentOf', 'screenSize');
+S.config('resizePercentOf', 'screenSize');
+S.config('windowHintsIgnoreHiddenWindows', false);
+S.config('windowHintsSpread', true);
+
+S.bindAll({
+  'e:cmd;shift': S.op('hint'),
+
+  '1:ctrl;shift': S.op('push', { 'direction': 'left', 'style': 'bar-resize:screenSizeX/2' }),
+  '2:ctrl;shift': S.op('push', { 'direction': 'right', 'style': 'bar-resize:screenSizeX/2' }),
+
+  'a:ctrl;shift': S.op('push', { 'direction': 'left', 'style': 'bar-resize:2*screenSizeX/3' }),
+  'd:ctrl;shift': S.op('push', { 'direction': 'right', 'style': 'bar-resize:2*screenSizeX/3' }),
+  'a:ctrl;alt;shift': S.op('push', { 'direction': 'left', 'style': 'bar-resize:screenSizeX/3' }),
+  'd:ctrl;alt;shift': S.op('push', { 'direction': 'right', 'style': 'bar-resize:screenSizeX/3' }),
+
+  's:ctrl;shift': S.op('move', { 'x': 'screenOriginX+screenSizeX/4', 'y': 'screenOriginY', 'width': 'screenSizeX/2', 'height': 'screenSizeY' }),
+
+  'q:ctrl;shift': S.op('corner', { 'direction': 'top-left', 'width': 'screenSizeX/2', 'height': 'screenSizeY/2' }),
+  'e:ctrl;shift': S.op('corner', { 'direction': 'top-right', 'width': 'screenSizeX/2', 'height': 'screenSizeY/2' }),
+  'z:ctrl;shift': S.op('corner', { 'direction': 'bottom-left', 'width': 'screenSizeX/2', 'height': 'screenSizeY/2' }),
+  'c:ctrl;shift': S.op('corner', { 'direction': 'bottom-right', 'width': 'screenSizeX/2', 'height': 'screenSizeY/2' }),
+
+  'f:ctrl;alt;cmd': S.op('move', { 'x': 'screenOriginX', 'y': 'screenOriginY', 'width': 'screenSizeX', 'height': 'screenSizeY' }),
+
+  'right:ctrl;alt;cmd': S.op('resize', { 'width': '+10%', 'height': '+0' }),
+  'left:ctrl;alt;cmd': S.op('resize', { 'width': '-10%', 'height': '+0' }),
+  'up:ctrl;alt;cmd': S.op('resize', { 'width': '+0', 'height': '-10%' }),
+  'down:ctrl;alt;cmd': S.op('resize', { 'width': '+0', 'height': '+10%' }),
+  'right:shift;ctrl;alt;cmd': S.op('resize', { 'width': '-10%', 'height': '+0', 'anchor': 'bottom-right' }),
+  'left:shift;ctrl;alt;cmd': S.op('resize', { 'width': '+10%', 'height': '+0', 'anchor': 'bottom-right' }),
+  'up:shift;ctrl;alt;cmd': S.op('resize', { 'width': '+0', 'height': '+10%', 'anchor': 'bottom-right' }),
+  'down:shift;ctrl;alt;cmd': S.op('resize', { 'width': '+0', 'height': '-10%', 'anchor': 'bottom-right' }),
+
+  'right:ctrl;alt': S.op('nudge', { 'x': '+5%', 'y': '+0' }),
+  'left:ctrl;alt': S.op('nudge', { 'x': '-5%', 'y': '+0' }),
+  'up:ctrl;alt': S.op('nudge', { 'x': '+0', 'y': '-5%' }),
+  'down:ctrl;alt': S.op('nudge', { 'x': '+0', 'y': '+5%' }),
+
+  'right:shift;ctrl;alt': S.op('nudge', { 'x': '+2', 'y': '+0' }),
+  'left:shift;ctrl;alt': S.op('nudge', { 'x': '-2', 'y': '+0' }),
+  'up:shift;ctrl;alt': S.op('nudge', { 'x': '+0', 'y': '-2' }),
+  'down:shift;ctrl;alt': S.op('nudge', { 'x': '+0', 'y': '+2' }),
+});
