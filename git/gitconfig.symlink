@@ -1,6 +1,6 @@
 [user]
-  email = chuyeow@gmail.com
-  name = Cheah Chu Yeow
+  email = khang.toh@gmail.com
+  name = Khang Toh
 [alias]
   co = checkout
   count = !git shortlog -sn
