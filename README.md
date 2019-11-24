@@ -4,7 +4,7 @@ These are my dotfiles and you can use them if it works for you. Inspired by  [ho
 ## Installation
 
 ```
-git clone git@github.com:chuyeow/dotfiles.git ~/.dotfiles
+git clone git@github.com:khangtoh/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
